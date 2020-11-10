@@ -14,3 +14,4 @@ web-build/
 /src/api/yelp.js
 .env
 yelp.js
+.expo

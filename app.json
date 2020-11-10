@@ -1,24 +1,28 @@
 {
-	"expo": {
-		"name": "restaurant-search",
-		"slug": "restaurant-search",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "./assets/icon.png",
-		"splash": {
-			"image": "./assets/splash.png",
-			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
-		},
-		"updates": {
-			"fallbackToCacheTimeout": 0
-		},
-		"assetBundlePatterns": ["**/*"],
-		"ios": {
-			"supportsTablet": true
-		},
-		"web": {
-			"favicon": "./assets/favicon.png"
-		}
-	}
+  "expo": {
+    "name": "restaurantsearch",
+    "slug": "restaurantsearch",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "This is a mobile app built using React-Native and Expo. Search for nearby restaurants. Results are determined by the type of dish or business name specified, and then filtered into 4 different price catgories. Each listed result has detailed information such as location, hours and photographs. ",
+    "githubUrl": "https://github.com/chelsea-angelena/restaurant-app"
+  }
 }
