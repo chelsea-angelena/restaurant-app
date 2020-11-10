@@ -16,6 +16,7 @@ export default function useResults() {
 					term: searchTerm,
 					latitude: latitude,
 					longitude: longitude,
+					radius: 1500,
 				},
 			});
 

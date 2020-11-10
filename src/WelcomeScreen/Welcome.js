@@ -3,7 +3,7 @@ import colors from '../style/colors';
 import { Button, Text, Title, Headline } from 'react-native-paper';
 import { View, StyleSheet } from 'react-native';
 import useResults from '../Hooks/useResults';
-import useLocation from '../Hooks/useLocation';
+
 
 export default function Welcome(props) {
 	const [searchApi, results, error] = useResults();
