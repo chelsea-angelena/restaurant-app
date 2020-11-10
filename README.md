@@ -1,5 +1,2 @@
-Expo-CLI and React-Native... to install dependencies: Yarn install, expo start
-(this is currently working on ios and andriod but not updated for web)
+This is a mobile app built using React-Native and Expo. Search for nearby restaurants. Results are determined by the type of dish or business name specified, and then filtered into 4 different price catgories. Each listed result has detailed information such as location, hours and photographs.
 
-Practicing api calls from react-native, location update dynamically and the search bar returns local results. 
-Click the results for detailed descriptions. 
