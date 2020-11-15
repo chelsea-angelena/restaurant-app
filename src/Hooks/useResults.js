@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import yelp from '../api/yelp';
 import useLocation from './useLocation';
+import { LocationContext } from '../../LocationContext';
 import Constants from 'expo-constants';
 
 export default function useResults() {
 	const [results, setResults] = useState([]);
-	const [error, setError] = useState('');
-	const [latitude, longitude, status] = useLocation();
+	const [error, setError] = useState(null);
+	const location = useContext(LocationContext);
 
 	const searchApi = async (searchTerm) => {
+		const {
+			coords: { latitude, longitude },
+		} = location;
 		try {
 			const response = await yelp.get('/search', {
 				params: {
@@ -16,7 +20,7 @@ export default function useResults() {
 					term: searchTerm,
 					latitude: latitude,
 					longitude: longitude,
-					radius: 1500,
+					radius: 10000,
 				},
 			});
 
@@ -27,7 +31,7 @@ export default function useResults() {
 	};
 
 	useEffect(() => {
-		searchApi('pasta');
+		searchApi('coffee');
 	}, []);
 
 	return [searchApi, results, error];

@@ -1,26 +1,29 @@
 import React from 'react';
-import { Button, Alert, View, Text } from 'react-native';
+import { Dimensions, View } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
+
+const screenWidth = Math.round(Dimensions.get('window').width);
+const screenHeight = Math.round(Dimensions.get('window').height);
 
 export default function MyMap({ latitude, longitude, coords, name }) {
 	let marker = { latitude, longitude };
 
-	// let x0 = coords.latitude;
-	// let x1 = coords.longitude;
-	// let y0 = marker.latitude;
-	// let y1 = marker.longitude;
-
-	// const getDistance = async () => {
-	// distance(x0, y0, x1, y1, K)
-
-	// 	Alert.alert(distance);
-	// 	console.log(distance(1, 1, 2, 3));
-	// 	console.log(distance(-1, -1, 2, 3));
-	// };
+	let points = [
+		{ latitude: marker.latitude, longitude: marker.longitude },
+		{ latitude: coords.latitude, longitude: coords.longitude },
+	];
 	return (
 		<View>
 			<MapView
-				style={{ height: 320, width: 320 }}
+				style={{
+					height: 320,
+					width: screenWidth * 0.95,
+					marginBottom: 32,
+					marginRight: 16,
+					marginLeft: 16,
+					paddingLeft: 16,
+					paddingRight: 16,
+				}}
 				initialRegion={{
 					latitude: latitude,
 					longitude: longitude,
@@ -31,7 +34,11 @@ export default function MyMap({ latitude, longitude, coords, name }) {
 				<Marker title={name} coordinate={coords} />
 				<Marker title='me' coordinate={marker} />
 
-				<Polyline />
+				<Polyline
+					coordinates={points}
+					strokeWidth={4}
+					strokeColor='rgba(255,140,0,0.8)'
+				/>
 			</MapView>
 		</View>
 	);

@@ -13,7 +13,14 @@ export default function ResultsDetail({ result, navigation }) {
 				{result.rating} <Ionicons name='md-star' size={20} color='black' />
 				's
 			</Text>
-			<Image source={{ uri: result.image_url }} style={styles.image} />
+			{result.image_url ? (
+				<Image source={{ uri: result.image_url }} style={styles.image} />
+			) : (
+				<Image
+					source={require('../../assets/foodLogo.jpg')}
+					style={styles.image}
+				/>
+			)}
 		</Surface>
 	);
 }

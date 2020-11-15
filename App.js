@@ -1,4 +1,4 @@
-// import 'react-native-gesture-handler';
+import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -9,38 +9,11 @@ import {
 	Provider as PaperProvider,
 } from 'react-native-paper';
 import colors from './src/style/colors';
-import UseLocation from './src/Hooks/useLocation';
+import useLocation from './src/Hooks/useLocation';
 import * as Font from 'expo-font';
 import { withTheme } from 'react-native-paper';
+import { LocationContext } from './LocationContext';
 
-const fontConfig = {
-	default: {
-		regular: {
-			fontFamily: 'Roboto',
-			fontWeight: 'normal',
-		},
-		bold: {
-			fontFamily: 'Roboto-Bold',
-			fontWeight: 'normal',
-		},
-		medium: {
-			fontFamily: 'Roboto-Medium',
-			fontWeight: 'normal',
-		},
-		light: {
-			fontFamily: 'Roboto-Light',
-			fontWeight: 'normal',
-		},
-		thin: {
-			fontFamily: 'Roboto-Thin',
-			fontWeight: 'normal',
-		},
-		extraBold: {
-			fontFamily: 'Montserrat',
-			fontWeight: 'Black 900',
-		},
-	},
-};
 const theme = {
 	...DefaultTheme,
 	colors: {
@@ -54,15 +27,21 @@ const theme = {
 		onBackground: colors.red,
 		onSurface: colors.lighter,
 	},
-	fonts: configureFonts(fontConfig),
 };
 
 export default function App() {
+	const [location] = useLocation();
+
+	if (!location) {
+		return <Text>Loading</Text>;
+	}
 	return (
-		<PaperProvider theme={theme}>
-			<NavigationContainer>
-				<MainNav />
-			</NavigationContainer>
-		</PaperProvider>
+		<LocationContext.Provider value={location}>
+			<PaperProvider theme={theme}>
+				<NavigationContainer>
+					<MainNav />
+				</NavigationContainer>
+			</PaperProvider>
+		</LocationContext.Provider>
 	);
 }
