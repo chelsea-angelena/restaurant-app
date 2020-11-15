@@ -15,4 +15,4 @@ web-build/
 .env
 yelp.js
 .expo
-Google-Services.Info.plist
+GoogleService-Info.plist
