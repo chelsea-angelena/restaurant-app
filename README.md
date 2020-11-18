@@ -1,5 +1,1 @@
-Expo-CLI and React-Native... to install dependencies: Yarn install, expo start
-(this is currently working on ios and andriod but not updated for web)
-
-Practicing api calls from react-native, location update dynamically and the search bar returns local results. 
-Click the results for detailed descriptions. 
+This is a mobile application which was built using react-native and expo. It runs on Android and iOS. Results for searches are all local, and a map of the location is provided. 
