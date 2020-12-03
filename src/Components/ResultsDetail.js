@@ -17,7 +17,7 @@ export default function ResultsDetail({ result, navigation }) {
 				<Image source={{ uri: result.image_url }} style={styles.image} />
 			) : (
 				<Image
-					source={require('../../assets/foodLogo.jpg')}
+					source={require('../../assets/icon.png')}
 					style={styles.image}
 				/>
 			)}

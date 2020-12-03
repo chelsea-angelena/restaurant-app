@@ -1,4 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
+import 'react-native-gesture-handler';
+import React, { useContext } from 'react';
 import {
 	ScrollView,
 	ImageBackground,
@@ -11,14 +12,14 @@ import {
 } from 'react-native';
 
 import { Title, Card } from 'react-native-paper';
-import colors from '../style/colors';
+
 import { Dimensions } from 'react-native';
 import MyMap from './Map';
-import { LocationContext } from '../../LocationContext';
+import { Context as LocationContext } from '../Context/LocationContext';
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
 
-export default function ResultScreenDetails({ result, lat, lon }) {
+export default function ResultScreenDetails({ result }) {
 	const { coordinates } = result;
 
 	return (
@@ -71,12 +72,7 @@ export default function ResultScreenDetails({ result, lat, lon }) {
 							);
 						}}
 					/>
-					<MyMap
-						latitude={lat}
-						longitude={lon}
-						coords={coordinates}
-						name={result.name}
-					/>
+					<MyMap resultCoords={coordinates} name={result.name} />
 				</View>
 			</ImageBackground>
 		</ScrollView>

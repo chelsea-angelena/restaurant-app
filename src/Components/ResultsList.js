@@ -7,16 +7,11 @@ import {
 	FlatList,
 } from 'react-native';
 import ResultsDetail from './ResultsDetail';
-import ResultsScreen from '../Screens/ResultsScreen';
-import { Surface, Title, Caption, Text, Headline } from 'react-native-paper';
+
+import { Caption, Headline } from 'react-native-paper';
 import colors from '../style/colors';
 
-export default function ResultsList({
-	title,
-	results,
-	navigation,
-	ResultsScreen,
-}) {
+export default function ResultsList({ title, results, navigation }) {
 	if (!results.length) {
 		return null;
 	}

@@ -1,18 +1,13 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+
 import MainNav from './src/Navigation/MainNav';
-import {
-	configureFonts,
-	DefaultTheme,
-	Provider as PaperProvider,
-} from 'react-native-paper';
-import colors from './src/style/colors';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+
+import { Context as LocationContext } from './src/Context/LocationContext';
 import useLocation from './src/Hooks/useLocation';
-import * as Font from 'expo-font';
-import { withTheme } from 'react-native-paper';
-import { LocationContext } from './LocationContext';
+import colors from './src/style/colors';
 
 const theme = {
 	...DefaultTheme,
@@ -29,19 +24,12 @@ const theme = {
 	},
 };
 
-export default function App() {
-	const [location] = useLocation();
-
-	if (!location) {
-		return <Text>Loading</Text>;
-	}
+export default App = () => {
 	return (
-		<LocationContext.Provider value={location}>
-			<PaperProvider theme={theme}>
-				<NavigationContainer>
-					<MainNav />
-				</NavigationContainer>
-			</PaperProvider>
-		</LocationContext.Provider>
+		<PaperProvider theme={theme}>
+			<NavigationContainer>
+				<MainNav />
+			</NavigationContainer>
+		</PaperProvider>
 	);
-}
+};

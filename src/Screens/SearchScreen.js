@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, { useContext, useState } from 'react';
 import {
 	ScrollView,
@@ -12,7 +13,6 @@ import ResultsList from '../Components/ResultsList';
 import { Caption } from 'react-native-paper';
 import colors from '../style/colors';
 import Welcome from '../WelcomeScreen/Welcome';
-import { LocationContext } from '../../LocationContext';
 
 export default function SearchScreen(props) {
 	const navigation = props.navigation;
@@ -36,11 +36,10 @@ export default function SearchScreen(props) {
 				<SearchBar
 					term={term}
 					onTermChange={setTerm}
-
 					onTermSubmit={() => searchApi(term)}
 				/>
 			</View>
-			{results.length === 0 ? (
+			{results && results.length === 0 ? (
 				<Welcome />
 			) : (
 				<View style={{ backgroundColor: '#212121' }}>

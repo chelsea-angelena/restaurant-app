@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import 'react-native-gesture-handler';
+import React from 'react';
 import colors from '../style/colors';
-import { Button, Text, Title, Headline } from 'react-native-paper';
-import {
-	Platform,
-	ImageBackground,
-	View,
-	StyleSheet,
-	Image,
-} from 'react-native';
-import useResults from '../Hooks/useResults';
+import { Text, Headline } from 'react-native-paper';
+import { Platform, ImageBackground, View, StyleSheet } from 'react-native';
 
 export default function Welcome(props) {
-
-
 	return (
 		<ImageBackground
 			alt='background'

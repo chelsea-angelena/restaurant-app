@@ -21,11 +21,6 @@ export default function MainNav() {
 				},
 			}}
 		>
-			{/* <Stack.Screen
-        name="Welcome"
-        component={Welcome}
-        options={{ headerShown: false }}
-      /> */}
 			<Stack.Screen
 				name='Search'
 				component={SearchScreen}

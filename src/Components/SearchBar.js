@@ -1,30 +1,26 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { Button, View, TextInput, Text, StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import colors from '../style/colors';
 
-const SearchBar = ({
-	term,
-	onTermChange,
-	onTermSubmit,
-	lat,
-	lon,
-}) => {
+
+const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
 	return (
-		<View style={styles.backgroundStyle}>
-			<Feather name='search' style={styles.iconStyle} />
-			<TextInput
-				autoCapitalize='none'
-				autoCorrect={false}
-				style={styles.inputStyle}
-				placeholder='Search'
-				value={term}
-				latitude={lat}
-				longitude={lon}
-				onChangeText={onTermChange}
-				onEndEditing={onTermSubmit}
-			/>
-		</View>
+		<>
+			<View style={styles.backgroundStyle}>
+				<Feather name='search' style={styles.iconStyle} />
+				<TextInput
+					autoCapitalize='none'
+					autoCorrect={false}
+					style={styles.inputStyle}
+					placeholder='Search'
+					value={term}
+					onChangeText={onTermChange}
+					onEndEditing={onTermSubmit}
+				/>
+			</View>
+			<Button title='Submit' onPress={onTermSubmit} />
+		</>
 	);
 };
 
@@ -49,5 +45,3 @@ const styles = StyleSheet.create({
 });
 
 export default SearchBar;
-
-
