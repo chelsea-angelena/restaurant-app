@@ -1,9 +1,7 @@
 import 'react-native-gesture-handler';
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import yelp from '../api/yelp';
-import { Dimensions } from 'react-native';
-import { Context as LocationContext } from '../Context/LocationContext';
-import useLocation from '../Hooks/useLocation.js';
+
 import ResultScreenDetails from './ResultScreenDetails';
 
 export default function ResultsScreen(props) {

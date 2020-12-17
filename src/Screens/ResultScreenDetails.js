@@ -1,11 +1,10 @@
 import 'react-native-gesture-handler';
-import React, { useContext } from 'react';
+import React from 'react';
 import {
 	ScrollView,
 	ImageBackground,
 	StyleSheet,
 	Platform,
-	Image,
 	Text,
 	FlatList,
 	View,
@@ -15,7 +14,7 @@ import { Title, Card } from 'react-native-paper';
 
 import { Dimensions } from 'react-native';
 import MyMap from './Map';
-import { Context as LocationContext } from '../Context/LocationContext';
+
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
 

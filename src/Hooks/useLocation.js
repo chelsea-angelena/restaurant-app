@@ -1,41 +1,42 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
-import * as Location from 'expo-location';
+// import * as Location from 'expo-location';
 
-export default function useLocation() {
-	const [location, setLocation] = useState(null);
-	const [loading, setLoading] = useState(true);
-	const [errorMsg, setErrorMsg] = useState(null);
+// export default function useLocation() {
+// 	const [latitude, setLatitude] = useState({});
+// 	const [longitude, setLongitude] = useState({});
+// 	const [loading, setLoading] = useState(true);
 
-	// useEffect(() => {
-	// 	(async () => {
-	// 		let { status } = await Location.requestPermissionsAsync();
-	// 		if (status !== 'granted') {
-	// 			setErrorMsg('Permission to access location was denied');
-	// 		}
-	// 		let result = await Location.getCurrentPositionAsync({});
-	// 		setLocation(result);
-	// 	})();
-	// 	setLoading(false);
-	// }, []);
+// 	// useEffect(() => {
+// 	// 	(async () => {
+// 	// 		let { status } = await Location.requestPermissionsAsync();
+// 	// 		if (status !== 'granted') {
+// 	// 			setErrorMsg('Permission to access location was denied');
+// 	// 		}
+// 	// 		let result = await Location.getCurrentPositionAsync({});
+// 	// 		setLocation(result);
+// 	// 	})();
+// 	// 	setLoading(false);
+// 	// }, []);
 
-	useEffect(() => {
-		(async () => {
-			let { status } = await Location.requestPermissionsAsync();
-			if (status !== 'granted') {
-				setErrorMsg('Permission to access location was denied');
-			}
+// 	useEffect(() => {
+// 		(async () => {
+// 			let { status } = await Location.requestPermissionsAsync();
+// 			if (status !== 'granted') {
+// 				setErrorMsg('Permission to access location was denied');
+// 			}
+// 			let location = await Location.getCurrentPositionAsync({});
+// 			setLongitude(location.coords.longitude);
+// 			setLatitude(location.coords.latitude);
+// 		})();
+// 		setLoading(false);
+// 	}, []);
 
-			let location = await Location.getCurrentPositionAsync({});
-			setLocation(location);
-		})();
-	}, []);
+// 	// if (errorMsg) {
+// 	// 	return 'errorMsg';
+// 	// } else if (location) {
+// 	// 	return JSON.stringify(location);
+// 	// }
 
-	// if (errorMsg) {
-	// 	return 'errorMsg';
-	// } else if (location) {
-	// 	return JSON.stringify(location);
-	// }
-
-	return [location];
-}
+// 	return [latitude, longitude];
+// }

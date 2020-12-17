@@ -1,10 +1,8 @@
 import 'dotenv/config';
-import React from 'react';
 
 const YELP_API_KEY = process.env.EXPO_YELP_API_KEY;
 
 export default {
-	version: process.env.DEV || '1.0.0',
 	name: 'restaurantapp',
 	slug: 'restaurantapp',
 	version: '1.0.0',
@@ -18,9 +16,7 @@ export default {
 	updates: {
 		fallbackToCacheTimeout: 0,
 	},
-
 	assetBundlePatterns: ['**/*'],
-
 	ios: {
 		supportsTablet: true,
 		buildNumber: '1.0.0',
